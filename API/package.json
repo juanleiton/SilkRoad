@@ -1,0 +1,35 @@
+{
+  "name": "silkroad-api",
+  "version": "1.0.0",
+  "description": "Freemium C2C e-commerce platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanleiton/SilkRoad.git"
+  },
+  "keywords": [
+    "e-commerce",
+    "freemium",
+    "c2c",
+    "mern",
+    "mongodb",
+    "mongo",
+    "mongoose",
+    "express",
+    "react",
+    "redux",
+    "node",
+    "aws",
+    "chakra",
+    "silkroad"
+  ],
+  "author": "Juan Leiton",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/juanleiton/SilkRoad/issues"
+  },
+  "homepage": "https://github.com/juanleiton/SilkRoad#readme"
+}
