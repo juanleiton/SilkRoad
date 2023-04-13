@@ -4,6 +4,9 @@
   "description": "Freemium C2C e-commerce platform",
   "main": "index.js",
   "scripts": {
+    "start": "node build/index.js",
+    "dev": "ts-node-dev src/index.ts",
+    "lint": "ts-standard",
     "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
