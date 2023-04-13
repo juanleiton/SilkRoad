@@ -1,3 +1,6 @@
+# Typescript outputfiles
+build/
+
 # Logs
 logs
 *.log
