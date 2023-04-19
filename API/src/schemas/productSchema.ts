@@ -1,4 +1,5 @@
-import { Schema } from 'mongoose'
+import { Schema, model } from 'mongoose'
+import { IProduct } from '../definitions/interfaces'
 // import User from './userSchema'
 // import Category from './categorySchema'
 // import Subcategory from './subcategorySchema'
@@ -6,7 +7,7 @@ import { Schema } from 'mongoose'
 // import Review from './reviewSchema'
 // import Question from './questionSchema'
 
-const productSchema = new Schema(
+const productSchema = new Schema<IProduct>(
   {
     user: {
       // This field will be hardcoded until the User schema is defined...
@@ -91,6 +92,8 @@ const productSchema = new Schema(
   }
 )
 
+const Product = model<IProduct>('Product', productSchema)
+
 function checkImagesValidity (urls: String[]): Boolean {
   const urlValidLength = urls.every(url => url.length >= 60 && url.length <= 180)
   const arrayValidLength = urls.length <= 9
@@ -108,4 +111,4 @@ function checkStockValidity (stock: Number): Boolean {
   return noDecimalPlaces
 }
 
-export default productSchema
+export default Product
