@@ -4,10 +4,11 @@
   "description": "Freemium C2C e-commerce platform",
   "main": "index.js",
   "scripts": {
-    "start": "node build/index.js",
+    "start": "npm run build && node build/index.js",
     "dev": "ts-node-dev src/index.ts",
     "lint": "ts-standard",
     "build": "tsc",
+    "clean": "rimraf build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -54,7 +55,8 @@
     "express-validator": "^6.15.0",
     "mongoose": "^7.0.3",
     "mongoose-unique-validator": "^4.0.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "rimraf": "^5.0.0"
   },
   "eslintConfig": {
     "parserOptions": {
