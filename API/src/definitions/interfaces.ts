@@ -1,7 +1,7 @@
-import { Date, Types } from 'mongoose'
+import { Date, Types, Document } from 'mongoose'
 import { Currency } from './enums'
 
-export interface IProduct {
+export interface IProduct extends Document {
   user: Types.ObjectId
   name: string
   description: string
