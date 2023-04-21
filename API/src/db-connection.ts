@@ -9,11 +9,12 @@ const validEV = typeof DB_USER === 'string' && typeof DB_PASSWORD === 'string' &
 // const validEnv = [DB_USER, DB_PASSWORD, DB_HOST, DB_NAME]
 //   .map(env => typeof env)
 //   .every(type => type === 'string')
-const connection = validEV ? `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}` : 'invalid connection'
+const connection = validEV ? `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority` : 'invalid connection'
 
+mongoose.set('strictQuery', true)
 mongoose.connect(connection)
   .then(() => {
-    console.log('SilkRoad is connected to ', DB_NAME)
+    console.log('SilkRoad is connected to', DB_NAME)
   })
   .catch(error => {
     console.error('Failed connection', error.message)
