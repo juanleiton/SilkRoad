@@ -7,7 +7,7 @@ import { IProduct } from '../definitions/interfaces'
 // import Review from './reviewSchema'
 // import Question from './questionSchema'
 
-const productSchema = new Schema<IProduct>(
+const productSchema = new Schema(
   {
     user: {
       // This field will be hardcoded until the User schema is defined...
@@ -92,7 +92,7 @@ const productSchema = new Schema<IProduct>(
   }
 )
 
-const Product = model<IProduct>('Product', productSchema)
+const Product = model<IProduct>('Product', productSchema, 'Product')
 
 function checkImagesValidity (urls: String[]): Boolean {
   const urlValidLength = urls.every(url => url.length >= 60 && url.length <= 180)
