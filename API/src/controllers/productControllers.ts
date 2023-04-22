@@ -4,7 +4,7 @@ import { IProduct } from '../definitions/interfaces'
 
 export async function getDefaultFeed (itemsPerPage: number, currentPage: number):
 Promise<IProduct[]> {
-  console.log(itemsPerPage, currentPage)
+  // currentPage MUST be an integer greater than 0, handle the error.
   const defaultFeed = await Product.find({})
     // .populate('User')
     // .populate('Category')
@@ -15,6 +15,5 @@ Promise<IProduct[]> {
     .sort({ updatedAt: 'desc' })
     .skip(itemsPerPage * (currentPage - 1)) // An aux function can be defined and then imported for all routes
     .limit(itemsPerPage)
-  console.log(defaultFeed)
   return defaultFeed
 }
