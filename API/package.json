@@ -32,7 +32,7 @@
     "silkroad"
   ],
   "author": "Juan Leiton",
-  "license": "UNLICENSED",
+  "license": "GPL-2.0-only",
   "bugs": {
     "url": "https://github.com/juanleiton/SilkRoad/issues"
   },
