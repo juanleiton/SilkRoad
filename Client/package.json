@@ -4,7 +4,9 @@
   "description": "Freemium C2C e-commerce platform",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --config webpack/webpack.config.ts --env env=dev --open",
+    "start": "webpack serve --mode=production",
+    "dev": "webpack serve --mode=development",
+    "build": "webpack --mode=development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -46,8 +48,10 @@
     "@types/react-dom": "^18.0.11",
     "babel-loader": "^9.1.2",
     "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.1",
     "react-refresh": "^0.14.0",
+    "style-loader": "^3.3.2",
     "ts-node-dev": "^2.0.0",
     "ts-standard": "^12.0.2",
     "typescript": "^5.0.4",
