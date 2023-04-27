@@ -24,8 +24,19 @@ const typescriptRule = {
 
 const cssRule = {
   test: /\.css$/,
-  use: ['style-loader', 'css-loader']
+  use: ['style-loader', 'css-loader', 'postcss-loader']
 }
+
+// const postcssRule = {
+//   test: /\.css$/,
+//   loader: 'postcss-loader',
+//   options: {
+//     plugins: [
+//       'postcss-preset-env',
+//       'tailwindcss'
+//     ]
+//   }
+// }
 
 export default (_env: any, argv: any): any => { // args and return types should not be 'any'
   const { mode } = argv
