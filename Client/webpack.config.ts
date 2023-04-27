@@ -1,5 +1,6 @@
 import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import { IWebpackConfig } from './src/definitions/interfaces'
 
 const typescriptRule = {
   test: /\.tsx$/,
@@ -38,7 +39,7 @@ const cssRule = {
 //   }
 // }
 
-export default (_env: any, argv: any): any => { // args and return types should not be 'any'
+export default (_env: unknown, argv: { mode: string }): IWebpackConfig => {
   const { mode } = argv
   const isProduction = mode === 'production'
   return {
