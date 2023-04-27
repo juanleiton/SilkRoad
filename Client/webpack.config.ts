@@ -3,6 +3,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 const typescriptRule = {
   test: /\.tsx$/,
+  exclude: /node_modules/,
   loader: 'babel-loader',
   options: {
     presets: [
@@ -14,6 +15,9 @@ const typescriptRule = {
         }
       ],
       '@babel/preset-typescript'
+    ],
+    plugins: [
+      '@babel/plugin-transform-runtime'
     ]
   }
 }
@@ -43,6 +47,9 @@ export default (_env: any, argv: any): any => { // args and return types should 
     },
     devServer: {
       open: true,
+      hot: true,
+      liveReload: true,
+      static: ['./public'],
       port: 3000,
       compress: true
     }
